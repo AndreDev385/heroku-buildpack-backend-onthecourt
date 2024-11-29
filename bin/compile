@@ -17,5 +17,3 @@ $NODEJS_BUILDPACK_DIR/bin/compile "$BUILD_DIR/backend" "$CACHE_DIR" "$ENV_DIR"
 
 # Clean up
 rm -rf $NODEJS_BUILDPACK_DIR
-
-console.log("Content of bin/compile script");
