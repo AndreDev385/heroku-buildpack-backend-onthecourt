@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+# Change to the backend directory
+cd $BUILD_DIR/backend
+
+# Download the official Node.js buildpack
+NODEJS_BUILDPACK_URL="https://github.com/heroku/heroku-buildpack-nodejs.git"
+NODEJS_BUILDPACK_DIR=$(mktemp -d)
+git clone $NODEJS_BUILDPACK_URL $NODEJS_BUILDPACK_DIR
+
+# Run the Node.js buildpack's compile script
+$NODEJS_BUILDPACK_DIR/bin/compile "$BUILD_DIR/backend" "$CACHE_DIR" "$ENV_DIR"
+
+# Clean up
+rm -rf $NODEJS_BUILDPACK_DIR
+
+console.log("Content of bin/compile script");

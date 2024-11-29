@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cat << EOF
+---
+default_process_types:
+  web: cd backend && npm start
+EOF
+
+console.log("Content of bin/release script");
