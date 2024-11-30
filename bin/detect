@@ -7,5 +7,3 @@ if [ -d "$1/backend" ]; then
 else
   exit 1
 fi
-
-console.log("Content of bin/detect script");
