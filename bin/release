@@ -3,5 +3,5 @@
 cat << EOF
 ---
 default_process_types:
-  web: cd backend && npm start
+  web: cd backend && node dist/server.js
 EOF
